@@ -1,5 +1,5 @@
 fn main() {
-    std_f32()
+    chars()
 }
 
 fn cast_to_unsigned() {
@@ -66,4 +66,30 @@ fn std_f32() {
 
     // The radix or base of the internal representation of f32.
     println!("RADIX = {}", std::f32::RADIX);
+}
+
+fn logic_op() {
+    let t = true;
+
+    println!("t = {}", t);
+    println!("!t = {}", !t);
+    println!("t && t = {}", t && t);
+    println!("t || t = {}", t || t);
+
+    let f = false;
+
+    println!("f = {}", f);
+    println!("!f = {}", !f);
+    println!("f && f = {}", f && f);
+    println!("f || f = {}", f || f);
+}
+
+fn chars() {
+    let c = 'z';
+    let z = 'ℤ';
+    let smile = '😻';
+
+    println!("c = {}", c);
+    println!("z = {}", z);
+    println!("heart_eyed_cat = {}", smile);
 }
