@@ -1,5 +1,5 @@
 fn main() {
-    chars()
+    arrays()
 }
 
 fn cast_to_unsigned() {
@@ -92,4 +92,32 @@ fn chars() {
     println!("c = {}", c);
     println!("z = {}", z);
     println!("heart_eyed_cat = {}", smile);
+}
+
+fn tuples() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    println!("tup = {:?}", tup);
+
+    let (x, y, z) = tup;
+    println!("The value of (x,y,z) is: ({},{},{})", x, y, z);
+
+    let x = tup.0;
+    let y = tup.1;
+    let z = tup.2;
+    println!("The value of (x,y,z) is: ({},{},{})", x, y, z);
+}
+
+fn arrays() {
+    let a = [1,2,3,4,5];
+    let b: [u8; 5] = [1,2,3,4,5];
+    println!("a is: {:?}", a);
+    println!("b is: {:?}", b);
+
+    let non_static_size: [u8; get_size()];
+    non_static_size = [1, 2];
+    println!("a is: {:?}", non_static_size);
+}
+
+const fn get_size() -> usize {
+    1 + 1
 }
