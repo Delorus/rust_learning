@@ -1,19 +1,21 @@
+use std::fmt::{Display, Debug};
+
 fn main() {
     get_special_realisation();
 
 }
 
-//fn largest<T>(list: &[T]) -> T {
-//    let mut largest = list[0];
+fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
+    let mut largest = list[0];
 
-//    for &item in list.iter() {
-//        if item > largest {
-//            largest = item;
-//        }
-//    }
-//
-//    return largest;
-//}
+    for &item in list.iter() {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    return largest;
+}
 
 #[derive(Debug)]
 struct Point<T> {
@@ -52,4 +54,10 @@ fn get_special_realisation() {
 
     println!("{}", p.x);
     println!("{}", p.pow_x());
+}
+
+fn some_func<T, U>(t: T, u: U) -> i32
+    where T: Display + Clone,
+          U: Clone + Debug {
+
 }
