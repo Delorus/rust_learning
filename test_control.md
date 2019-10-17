@@ -27,3 +27,9 @@ cargo test part_name
 ```bash
 cargo test -- --ignored
 ```
+
+### Запуск одного интеграционного теста
+
+```bash
+cargo test --test integration_test
+```
