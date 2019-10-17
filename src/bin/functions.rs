@@ -11,5 +11,5 @@ fn return_value() -> i32 {
 }
 
 fn not_return_value() -> i32 {
-    42;
+    42; 66
 }

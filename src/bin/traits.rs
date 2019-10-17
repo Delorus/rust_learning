@@ -16,7 +16,7 @@ struct NewsArticle {
     content: String,
 }
 
-trait Summarize {
+pub trait Summarize {
     fn summary(&self) -> String;
     fn default_msg(&self) -> String {
         String::from("(Read more...)")
