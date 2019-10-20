@@ -70,3 +70,45 @@ impl<T: Display + PartialOrd> Pair<T> {
         }
     }
 }
+
+trait Draw {
+    fn draw(&self);
+}
+
+struct Screen {
+    components: Vec<Box<dyn Draw>>
+}
+
+impl Screen {
+    fn run(&self) {
+        for component in self.components.iter() {
+            component.draw();
+        }
+    }
+}
+
+struct Button {
+    width: u32,
+    height: u32,
+    label: String,
+}
+
+impl Draw for Button {
+    fn draw(&self) {
+        unimplemented!()
+    }
+}
+
+fn use_trait_object() {
+    let screen = Screen {
+        components: vec![
+            Box::new(Button {
+                width: 75,
+                height: 10,
+                label: String::from("Ok"),
+            })
+        ]
+    };
+
+    screen.run();
+}
