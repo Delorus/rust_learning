@@ -3,7 +3,7 @@ use std::rc::{Rc, Weak};
 use crate::List::{Cons, Nil};
 
 fn main() {
-    weak_ref_cycle();
+    ref_cycle();
 }
 
 #[derive(Debug)]
@@ -14,8 +14,8 @@ enum List {
 
 impl List {
     fn tail(&self) -> Option<&RefCell<Rc<List>>> {
-        match *self {
-            List::Cons(_, ref item) => Some(item),
+        match self {
+            List::Cons(_, item) => Some(item),
             List::Nil => None,
         }
     }

@@ -1,5 +1,5 @@
 fn main() {
-    return_ownership()
+    smart_lifetime()
 }
 
 fn change_string() {
@@ -70,3 +70,11 @@ fn ref_and_ownership() {
     }
 }
 
+fn smart_lifetime() {
+    let mut x = 10;
+
+    let y = &x;
+    let mut z = &mut x;
+
+    println!("{}", z);
+}
